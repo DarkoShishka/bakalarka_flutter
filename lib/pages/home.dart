@@ -1,4 +1,3 @@
-import 'package:bakalarka_flutter/ui_tools.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -13,14 +12,23 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.mainColor,
+        backgroundColor: Colors.blueAccent,
         centerTitle: true,
-        title: const BakalarkaText(text: "Bakalarka",),
+        title: const Text(
+          "Bakalarka",
+          style: TextStyle(color: Colors.white),
+        ),
+        leading: IconButton(onPressed: () {
+          Navigator.pushNamed(context, '/settings');
+        }, icon: const Icon(Icons.menu), color: Colors.white,),
       ),
-      backgroundColor: AppColors.mainColor,
-      body: const Text("Bakalrsky projekt", style: TextStyle(
-        color: AppColors.secondaryColor,
-      ),),
+      backgroundColor: Colors.white,
+      body: const Text(
+        "Bakalrsky projekt",
+        style: TextStyle(
+          color: Colors.blueAccent,
+        ),
+      ),
     );
   }
 }
