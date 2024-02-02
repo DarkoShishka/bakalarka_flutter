@@ -1,0 +1,18 @@
+{
+    "language": "Language",
+    "@language": {
+        "description": "List of languages"
+    },
+    "english": "English",
+    "@english": {
+        "description": "English language"
+    },
+    "slovak": "Slovak",
+    "@slovak": {
+        "description": "Slovak language"
+    },
+    "serbian": "Serbian",
+    "@serbian": {
+        "description": "Serbian language"
+    }
+}

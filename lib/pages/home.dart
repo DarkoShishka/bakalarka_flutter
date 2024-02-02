@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../ui_tools.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -23,11 +25,8 @@ class _HomeState extends State<Home> {
         }, icon: const Icon(Icons.menu), color: Colors.white,),
       ),
       backgroundColor: Colors.white,
-      body: const Text(
-        "Bakalrsky projekt",
-        style: TextStyle(
-          color: Colors.blueAccent,
-        ),
+      body: Stock(
+        text: "Stock1",
       ),
     );
   }

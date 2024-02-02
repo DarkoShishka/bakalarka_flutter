@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
@@ -15,7 +14,19 @@ class _Settings extends State<Settings> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        title: Text("Settings"),
+        foregroundColor: Colors.white,
+        centerTitle: true,
+        title: const Text("Settings", style: TextStyle(color: Colors.white),),
+      ),
+      body: SafeArea(
+        child: Card(
+          child: ListTile(
+            onTap: (){
+              Navigator.pushNamed(context, '/languages');
+            },
+            title: const Text("Language"),
+          ),
+        ),
       ),
     );
   }
