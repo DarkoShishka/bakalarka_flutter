@@ -7,21 +7,54 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
 
 void main() {
-  runApp(MaterialApp(
-    routes: {
-      '/': (context) => const Home(),
-      '/home': (context) => const Home(),
-      '/settings': (context) => const Settings(),
-      '/languages': (context) => const Language(),
-    },
-    debugShowCheckedModeBanner: false,
-    supportedLocales: L10n.all,
-    locale: const Locale('sr'),
-    localizationsDelegates: const [
-      AppLocalizations.delegate,
-      GlobalMaterialLocalizations.delegate,
-      GlobalWidgetsLocalizations.delegate,
-      GlobalCupertinoLocalizations.delegate
-    ],
-  ));
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+
+  static void setLocale(BuildContext context, Locale newLocale) {
+    _MyAppState? state = context.findAncestorStateOfType<_MyAppState>();
+    state?.setLocale(newLocale);
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  Locale? _locale;
+
+  setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
+
+  @override
+  void didChangeDependencies() {
+    getLocale().then((locale) => {setLocale(locale)});
+    super.didChangeDependencies();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      routes: {
+        '/': (context) => const Home(),
+        '/home': (context) => const Home(),
+        '/settings': (context) => const Settings(),
+        '/languages': (context) => const Language(),
+      },
+      debugShowCheckedModeBanner: false,
+      supportedLocales: L10n.all,
+      locale: _locale,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate
+      ],
+    );
+  }
 }

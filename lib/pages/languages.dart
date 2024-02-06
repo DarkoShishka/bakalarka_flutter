@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../l10n/l10n.dart';
+import '../main.dart';
+
 class Language extends StatefulWidget {
   const Language({super.key});
 
@@ -17,8 +20,12 @@ class _Language extends State<Language> {
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
-        title: Text(AppLocalizations.of(context)!.language, style: TextStyle(color: Colors.white),),
+        title: Text(
+          AppLocalizations.of(context)!.language,
+          style: const TextStyle(color: Colors.white),
+        ),
       ),
+      //TODO: create Language class, and get this part cleaner
       body: Column(
         children: [
           SafeArea(
@@ -27,10 +34,11 @@ class _Language extends State<Language> {
                 leading: const CircleAvatar(
                   backgroundImage: AssetImage('assets/uk.png'),
                 ),
-                onTap: () {
-
+                onTap: () async {
+                  Locale locale = await setLocale("en");
+                  MyApp.setLocale(context, locale);
                 },
-                title: Text(AppLocalizations.of(context)!.english),
+                title: Text(translation(context).english),
               ),
             ),
           ),
@@ -40,10 +48,11 @@ class _Language extends State<Language> {
                 leading: const CircleAvatar(
                   backgroundImage: AssetImage('assets/sk.png'),
                 ),
-                onTap: () {
-
+                onTap: () async {
+                  Locale locale = await setLocale("sk");
+                  MyApp.setLocale(context, locale);
                 },
-                title: Text(AppLocalizations.of(context)!.slovak),
+                title: Text(translation(context).slovak),
               ),
             ),
           ),
@@ -53,10 +62,11 @@ class _Language extends State<Language> {
                 leading: const CircleAvatar(
                   backgroundImage: AssetImage('assets/rs.png'),
                 ),
-                onTap: () {
-
+                onTap: () async {
+                  Locale locale = await setLocale("sr");
+                  MyApp.setLocale(context, locale);
                 },
-                title: Text(AppLocalizations.of(context)!.serbian),
+                title: Text(translation(context).serbian),
               ),
             ),
           ),
@@ -64,5 +74,4 @@ class _Language extends State<Language> {
       ),
     );
   }
-
 }

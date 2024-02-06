@@ -14,5 +14,9 @@
     "serbian": "Serbian",
     "@serbian": {
         "description": "Serbian language"
+    },
+    "settings": "Settings",
+    "@settings": {
+        "description": "Settings page"
     }
 }
