@@ -10,6 +10,30 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List <Widget> list = [
+    const Stock(
+      text: "Stock1",
+    ),
+    const Stock(
+      text: "Stock2",
+    ),
+    const Stock(
+      text: "Stock1",
+    ),
+    const Stock(
+      text: "Stock1",
+    ),
+    const Stock(
+      text: "Stock1",
+    ),
+    const Stock(
+      text: "Stock1",
+    ),
+    const Stock(
+      text: "Stock1",
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +49,8 @@ class _HomeState extends State<Home> {
         }, icon: const Icon(Icons.menu), color: Colors.white,),
       ),
       backgroundColor: Colors.white,
-      body: Stock(
-        text: "Stock1",
+      body: ListView(
+        children: list,
       ),
     );
   }
