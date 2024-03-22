@@ -18,5 +18,17 @@
     "settings": "Settings",
     "@settings": {
         "description": "Settings page"
+    },
+    "price_right_now": "Price right now",
+    "@price_right_now": {
+        "description": "Price right now"
+    },
+    "price_situation_one": "Price if situation one happens",
+    "@price_situation_one": {
+        "description": "Price if situation one happens"
+    },
+    "price_situation_two": "Price if situation two happens",
+    "@price_situation_two": {
+        "description": "Price if situation two happens"
     }
 }

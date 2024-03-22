@@ -3,5 +3,8 @@
   "english": "Anglický jazyk",
   "slovak": "Slovenský jazyk",
   "serbian": "Srbský jazyk",
-  "settings": "Nastavenia"
+  "settings": "Nastavenia",
+  "price_right_now": "Aktuálna cena",
+  "price_situation_one": "Cena v prípade prvej situácii",
+  "price_situation_two": "Cena v prípade druhej situácii"
 }

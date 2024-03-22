@@ -17,7 +17,7 @@ class _Settings extends State<Settings> {
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
-        title: Text(translation(context).settings, style: TextStyle(color: Colors.white),),
+        title: Text(translation(context).settings, style: const TextStyle(color: Colors.white),),
       ),
       body: SafeArea(
         child: Card(
